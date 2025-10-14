@@ -1,0 +1,11 @@
+state,pm25_percentile,ozone_percentile,diesel_pm_percentile,traffic_proximity_percentile,lead_paint_percentile,superfund_proximity_percentile,rmp_proximity_percentile,hazardous_waste_percentile,low_income_percentile,minority_percentile,year,source,generated_date
+California,52.5,26.2,71.7,70.4,36.1,73.3,42.5,72.5,73.8,37.2,2022,EPA EJScreen (Sample Data),2025-10-14
+Texas,87.0,83.2,43.4,48.5,54.8,62.6,37.2,40.9,63.0,72.8,2022,EPA EJScreen (Sample Data),2025-10-14
+Florida,73.9,74.9,52.5,43.3,31.7,71.7,62.3,30.3,49.9,75.6,2022,EPA EJScreen (Sample Data),2025-10-14
+New York,65.9,37.7,57.0,87.4,75.5,69.2,41.1,74.9,37.9,63.7,2022,EPA EJScreen (Sample Data),2025-10-14
+Pennsylvania,39.4,35.9,62.4,88.3,42.9,52.9,37.6,68.9,49.0,76.3,2022,EPA EJScreen (Sample Data),2025-10-14
+Illinois,39.4,36.0,82.1,80.4,63.1,70.7,49.4,70.1,49.6,59.6,2022,EPA EJScreen (Sample Data),2025-10-14
+Ohio,33.5,43.3,47.0,55.2,45.6,24.9,31.3,72.4,67.8,61.4,2022,EPA EJScreen (Sample Data),2025-10-14
+Georgia,82.0,56.5,65.9,44.9,56.0,30.8,61.1,34.1,63.7,55.7,2022,EPA EJScreen (Sample Data),2025-10-14
+North Carolina,66.1,50.9,70.5,74.2,57.3,22.5,28.4,49.7,74.9,31.5,2022,EPA EJScreen (Sample Data),2025-10-14
+Michigan,72.5,42.5,37.8,62.0,39.2,37.9,69.4,36.4,56.2,36.5,2022,EPA EJScreen (Sample Data),2025-10-14

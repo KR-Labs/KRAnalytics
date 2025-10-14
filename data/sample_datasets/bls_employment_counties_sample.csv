@@ -1,0 +1,11 @@
+year,quarter,area_fips,county_name,total_employment,average_weekly_wage,source,generated_date
+2022,4,06037,"Los Angeles, CA",4200000,1450,BLS QCEW (Sample Data),2025-10-14
+2022,4,17031,"Cook, IL",2400000,1380,BLS QCEW (Sample Data),2025-10-14
+2022,4,48201,"Harris, TX",2100000,1320,BLS QCEW (Sample Data),2025-10-14
+2022,4,04013,"Maricopa, AZ",1900000,1250,BLS QCEW (Sample Data),2025-10-14
+2022,4,36047,"Kings, NY",1300000,1520,BLS QCEW (Sample Data),2025-10-14
+2022,4,06073,"San Diego, CA",1400000,1410,BLS QCEW (Sample Data),2025-10-14
+2022,4,36061,"New York, NY",2200000,1680,BLS QCEW (Sample Data),2025-10-14
+2022,4,12086,"Miami-Dade, FL",1200000,1280,BLS QCEW (Sample Data),2025-10-14
+2022,4,06059,"Orange, CA",1500000,1390,BLS QCEW (Sample Data),2025-10-14
+2022,4,53033,"King, WA",1400000,1720,BLS QCEW (Sample Data),2025-10-14

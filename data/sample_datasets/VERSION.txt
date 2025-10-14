@@ -1,0 +1,21 @@
+KRAnalytics Sample Data Version Information
+Generated: 2025-10-14 15:54:10
+Generator: scripts/generate_sample_data.py
+
+Data Sources:
+- US Census Bureau (American Community Survey)
+- Bureau of Labor Statistics (LNS, QCEW)
+- Environmental Protection Agency (EJScreen)
+- Federal Bureau of Investigation (Uniform Crime Reports)
+
+Files Generated: 4
+Total Records: 97
+
+Usage:
+These datasets are intended for tutorial and educational purposes.
+They represent real government data but may be subsets or samples.
+
+For production use, always fetch the latest data from official APIs.
+
+Last Updated: 2025-10-14
+Version: 1.0.0
