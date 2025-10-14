@@ -198,3 +198,4 @@ logs/
 !notebooks/examples/.gitkeep
 !notebooks/templates/.gitkeep
 !notebooks/exploratory/.gitkeep
+.venv/
