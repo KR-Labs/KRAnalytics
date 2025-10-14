@@ -71,7 +71,7 @@ from tools.api_key_manager import validate_api_keys, get_missing_apis
 if not validate_api_keys():
     missing = get_missing_apis()
     print(f"⚠️  Missing required APIs: {', '.join(missing)}")
-    print("Configure them in /QuipuLabs-khipu/configs/apikeys")
+    print("Configure them in /KhipuLabs-khipu/configs/apikeys")
 else:
     print("✅ All required APIs configured")
 ```
@@ -82,7 +82,7 @@ else:
 
 ### Config File Location
 
-**Primary:** `/Users/bcdelo/Documents/GitHub/QuipuLabs-khipu/configs/apikeys`
+**Primary:** `/Users/bcdelo/Documents/GitHub/KhipuLabs-khipu/configs/apikeys`
 
 ### Supported Formats
 
@@ -229,12 +229,12 @@ else:
 
 **Solution 1:** Check config file exists
 ```bash
-ls -la /Users/bcdelo/Documents/GitHub/QuipuLabs-khipu/configs/apikeys
+ls -la /Users/bcdelo/Documents/GitHub/KhipuLabs-khipu/configs/apikeys
 ```
 
 **Solution 2:** Verify file format
 ```bash
-cat /Users/bcdelo/Documents/GitHub/QuipuLabs-khipu/configs/apikeys
+cat /Users/bcdelo/Documents/GitHub/KhipuLabs-khipu/configs/apikeys
 ```
 
 **Solution 3:** Use environment variable
@@ -267,7 +267,7 @@ sys.path.append(str(project_root))
 - **API Key Manager:** `/Users/bcdelo/Documents/GitHub/QRL/tools/api_key_manager.py`
 
 ### Configuration
-- **Primary Config:** `/Users/bcdelo/Documents/GitHub/QuipuLabs-khipu/configs/apikeys`
+- **Primary Config:** `/Users/bcdelo/Documents/GitHub/KhipuLabs-khipu/configs/apikeys`
 - **Alternative:** `../configs/apikeys` (relative to notebook)
 
 ### Documentation
@@ -353,7 +353,7 @@ python -c "from tools.api_key_manager import load_api_key; k = load_api_key('CEN
 - **Test Script:** Run `python tools/api_key_manager.py`
 
 ### Issues
-- **Config not found:** Check `/QuipuLabs-khipu/configs/apikeys` exists
+- **Config not found:** Check `/KhipuLabs-khipu/configs/apikeys` exists
 - **Import error:** Add project root to sys.path in notebook
 - **Optional API warning:** Normal behavior, register API when needed
 

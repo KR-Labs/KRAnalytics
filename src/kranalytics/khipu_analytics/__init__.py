@@ -1,5 +1,5 @@
 """
-Quipu Analytics Suite - Core Utilities Package
+Khipu Analytics Suite - Core Utilities Package
 
 Provides shared utilities for the 29-domain Analytics Model Matrix framework.
 """

@@ -37,8 +37,8 @@ KRAnalytics/
 │   └── PULL_REQUEST_TEMPLATE.md  # PR template
 │
 ├── src/
-│   └── kranalytics/              # Core framework package (copied from quipu_analytics)
-│       └── quipu_analytics/      # Original namespace preserved
+│   └── kranalytics/              # Core framework package (copied from khipu_analytics)
+│       └── khipu_analytics/      # Original namespace preserved
 │
 ├── notebooks/
 │   ├── examples/                 # 7 tutorial notebooks
@@ -116,7 +116,7 @@ KRAnalytics/
 - ✅ .github/dependabot.yml
 
 #### 3. Source Code (src/kranalytics/)
-- ✅ Complete kranalytics package (copied from quipu_analytics)
+- ✅ Complete kranalytics package (copied from khipu_analytics)
 - ✅ All public API modules
 - ✅ __init__.py files created
 

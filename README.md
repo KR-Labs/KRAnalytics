@@ -361,7 +361,7 @@ See [docs/roadmaps/](./docs/roadmaps/) for detailed plans.
 
 ## Related Projects
 
-- **[Quipu Analytics Suite](https://github.com/QuipuAnalytics)** - Enterprise analytics platform
+- **[Khipu Analytics Suite](https://github.com/KhipuAnalytics)** - Enterprise analytics platform
 - **[Analytics Model Matrix](./docs/)** - Comprehensive analytics framework documentation
 
 ---

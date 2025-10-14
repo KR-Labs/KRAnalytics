@@ -7,7 +7,7 @@
 
 ## 📊 Current API Configuration
 
-### Existing APIs (Secured in `/QuipuLabs-khipu/configs/apikeys`)
+### Existing APIs (Secured in `/KhipuLabs-khipu/configs/apikeys`)
 1. ✅ **Census API** - `CENSUS_API_KEY`
 2. ✅ **BLS (Bureau of Labor Statistics)** - `BLS_API_KEY`
 3. ✅ **FRED (Federal Reserve)** - `FRED_API_KEY`
@@ -319,7 +319,7 @@ WORLDBANK_ENDPOINT=http://api.worldbank.org/v2/
 
 ```python
 """
-API Key Manager for Quipu Analytics Suite
+API Key Manager for Khipu Analytics Suite
 Centralized API key loading and validation
 """
 import os
@@ -371,7 +371,7 @@ class APIKeyManager:
             self._load_from_file(self.env_file)
 
         # Priority 3: Default config file
-        default_config = Path(__file__).parent.parent.parent / 'QuipuLabs-khipu' / 'configs' / 'apikeys'
+        default_config = Path(__file__).parent.parent.parent / 'KhipuLabs-khipu' / 'configs' / 'apikeys'
         if default_config.exists():
             self._load_from_file(str(default_config))
 

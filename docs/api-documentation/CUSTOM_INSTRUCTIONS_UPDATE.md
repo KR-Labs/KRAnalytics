@@ -9,7 +9,7 @@
 
 ### **19-Domain Socioeconomic Analysis Framework**
 
-**STRATEGIC MANDATE**: All notebook development must align with the 19-domain Analytics Model Matrix. This framework represents the complete scope of socioeconomic analysis capabilities across the Quipu Analytics Suite.
+**STRATEGIC MANDATE**: All notebook development must align with the 19-domain Analytics Model Matrix. This framework represents the complete scope of socioeconomic analysis capabilities across the Khipu Analytics Suite.
 
 ### **Domain Architecture**
 
@@ -460,7 +460,7 @@
 #### **Environment Variable Management**
 **CRITICAL RULE**: **NEVER** hardcode API keys in notebooks. Always use environment-based credential management.
 
-**API Configuration File:** `/QuipuLabs-khipu/configs/apikeys`
+**API Configuration File:** `/KhipuLabs-khipu/configs/apikeys`
 
 **Standard API Loading Pattern:**
 ```python
@@ -487,7 +487,7 @@ def load_api_key(api_name: str, required: bool = True) -> str:
 
     if not key:
         # Priority 2: Config file
-        config_path = Path(__file__).parent.parent.parent / 'QuipuLabs-khipu' / 'configs' / 'apikeys'
+        config_path = Path(__file__).parent.parent.parent / 'KhipuLabs-khipu' / 'configs' / 'apikeys'
         if config_path.exists():
             with open(config_path, 'r') as f:
                 for line in f:
@@ -584,7 +584,7 @@ noaa_api_key = load_api_key('NOAA_API_KEY', required=False)  # Optional
 
 ### **AI Agent Operational Protocol for Notebook Creation**
 
-**MANDATE**: When creating ANY notebook in the Quipu Analytics Suite ecosystem, you MUST adhere to the following comprehensive requirements. These standards ensure enterprise-grade quality, academic rigor, and seamless integration across the 19-domain Analytics Model Matrix.
+**MANDATE**: When creating ANY notebook in the Khipu Analytics Suite ecosystem, you MUST adhere to the following comprehensive requirements. These standards ensure enterprise-grade quality, academic rigor, and seamless integration across the 19-domain Analytics Model Matrix.
 
 ---
 
@@ -598,8 +598,8 @@ noaa_api_key = load_api_key('NOAA_API_KEY', required=False)  # Optional
  {NOTEBOOK TITLE}
 ═══════════════════════════════════════════════════════════════════════════
 
-Author: [Your Name / Quipu Analytics Team]
-Affiliation: Quipu Analytics Suite
+Author: [Your Name / Khipu Analytics Team]
+Affiliation: Khipu Analytics Suite
 Version: v1.0
 Date: {YYYY-MM-DD}
 UUID: {unique-identifier}
@@ -611,12 +611,12 @@ Domain: {One of 19 Analytics Model Matrix domains}
 ═══════════════════════════════════════════════════════════════════════════
 
 To cite this notebook in publications:
-    [Author Name]. ({Year}). {Notebook Title}. Quipu Analytics Suite,
+    [Author Name]. ({Year}). {Notebook Title}. Khipu Analytics Suite,
     Tier {X} Analytics Framework. doi:{optional-doi}
 
 To cite the framework:
-    Quipu Analytics Suite. (2025). 6-Tier Hierarchical Learning Framework
-    for Socioeconomic Data Science. https://github.com/QuipuAnalytics/quipu-analytics-suite
+    Khipu Analytics Suite. (2025). 6-Tier Hierarchical Learning Framework
+    for Socioeconomic Data Science. https://github.com/KhipuAnalytics/khipu-analytics-suite
 
 ════════════════════════════════════════════════════════════════════════════
  NOTEBOOK DESCRIPTION
@@ -701,7 +701,7 @@ project_root = Path.cwd().parent.parent
 sys.path.append(str(project_root))
 
 # Execution tracking (REQUIRED)
-from src.quipu_analytics.execution_tracking import setup_notebook_tracking
+from src.khipu_analytics.execution_tracking import setup_notebook_tracking
 
 metadata = setup_notebook_tracking(
     notebook_name="{TierX_NotebookName.ipynb}",
@@ -736,14 +736,14 @@ def load_api_key(api_name: str, required: bool = True) -> str:
     Load API key from environment or config file.
 
     SECURITY NOTE: API keys should NEVER be hardcoded in notebooks.
-    Store in /QuipuLabs-khipu/configs/apikeys or environment variables.
+    Store in /KhipuLabs-khipu/configs/apikeys or environment variables.
     """
     # Priority 1: Environment variable
     key = os.environ.get(api_name)
 
     if not key:
         # Priority 2: Config file
-        config_path = Path.cwd().parent.parent.parent / 'QuipuLabs-khipu' / 'configs' / 'apikeys'
+        config_path = Path.cwd().parent.parent.parent / 'KhipuLabs-khipu' / 'configs' / 'apikeys'
         if config_path.exists():
             with open(config_path, 'r') as f:
                 for line in f:
@@ -1103,7 +1103,7 @@ else:
     print(f"⚠️  Registry file not found: {registry_path}")
 
 # Cross-platform integration check
-khipu_executor_path = Path.cwd().parent.parent.parent / 'QuipuLabs-khipu' / 'khipu' / 'core' / 'notebook_executor.py'
+khipu_executor_path = Path.cwd().parent.parent.parent / 'KhipuLabs-khipu' / 'khipu' / 'core' / 'notebook_executor.py'
 
 if khipu_executor_path.exists():
     print("✅ Khipu notebook executor available for production deployment")

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Execution Tracking Module for Quipu Analytics Suite
+Execution Tracking Module for Khipu Analytics Suite
 
 Provides comprehensive execution metadata tracking, provenance logging,
 and reproducibility support for all notebooks in the 29-domain Analytics Model Matrix.
@@ -13,7 +13,7 @@ Features:
 - Execution log persistence (JSON format)
 - Integration with notebook registry
 
-Author: Quipu Analytics Suite
+Author: Khipu Analytics Suite
 Date: 2025-10-13
 Version: 1.0
 """

@@ -185,7 +185,7 @@ results_df = results_df.sort_values('Test R²', ascending=False)
 
 ### API Configuration
 ```bash
-/Users/bcdelo/Documents/GitHub/QuipuLabs-khipu/configs/apikeys
+/Users/bcdelo/Documents/GitHub/KhipuLabs-khipu/configs/apikeys
 ```
 
 ### Data Exports
