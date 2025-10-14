@@ -260,7 +260,7 @@ class WorkspaceCohesionTests:
         print("\n" + Colors.BOLD + "Test 6: Import Path Validation" + Colors.RESET)
 
         problematic_patterns = [
-            "KhipuLabs-khipu",  # Old workspace name
+            "KR-Labs-khipu",  # Old workspace name
             "Documents/GitHub/QRL",  # Old personal workspace path
             "from tier1_descriptive",  # Non-existent tier module structure
             "from tier2_predictive",  # Non-existent tier module structure
@@ -535,7 +535,7 @@ def test_package_importable(workspace_root):
 def test_import_paths(workspace_root):
     """Test 7: No problematic import paths"""
     problematic_patterns = [
-        "KhipuLabs-khipu",  # Old workspace name
+        "KR-Labs-khipu",  # Old workspace name
         "Documents/GitHub/QRL",  # Old personal workspace path
     ]
 

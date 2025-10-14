@@ -274,7 +274,7 @@ unzip -o sample_data.zip -d data/
 For issues with sample data:
 - **GitHub Issues**: https://github.com/KR-Labs/KRAnalytics/issues
 - **Discussions**: https://github.com/KR-Labs/KRAnalytics/discussions
-- **Email**: support@khipulabs.com
+- **Email**: info@krlabs.dev
 
 ---
 

@@ -7,7 +7,7 @@
 
 ## 📊 Current API Configuration
 
-### Existing APIs (Secured in `/KhipuLabs-khipu/configs/apikeys`)
+### Existing APIs (Secured in `/KR-Labs-khipu/configs/apikeys`)
 1. ✅ **Census API** - `CENSUS_API_KEY`
 2. ✅ **BLS (Bureau of Labor Statistics)** - `BLS_API_KEY`
 3. ✅ **FRED (Federal Reserve)** - `FRED_API_KEY`
@@ -371,7 +371,7 @@ class APIKeyManager:
             self._load_from_file(self.env_file)
 
         # Priority 3: Default config file
-        default_config = Path(__file__).parent.parent.parent / 'KhipuLabs-khipu' / 'configs' / 'apikeys'
+        default_config = Path(__file__).parent.parent.parent / 'KR-Labs-khipu' / 'configs' / 'apikeys'
         if default_config.exists():
             self._load_from_file(str(default_config))
 

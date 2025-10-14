@@ -27,7 +27,7 @@ Successfully created and tested enterprise-grade API key management utility for 
 
 ✅ **Security Best Practices Implemented**
 - Priority 1: Environment variables
-- Priority 2: Config file (`/KhipuLabs-khipu/configs/apikeys`)
+- Priority 2: Config file (`/KR-Labs-khipu/configs/apikeys`)
 - No hardcoded credentials
 - Keys never exposed in error messages
 
@@ -43,7 +43,7 @@ Successfully created and tested enterprise-grade API key management utility for 
 1. **Multi-Source Loading**
    - Environment variables (highest priority)
    - Specified config file
-   - Default Khipu config: `/KhipuLabs-khipu/configs/apikeys`
+   - Default Khipu config: `/KR-Labs-khipu/configs/apikeys`
    - Parent directory config: `../configs/apikeys`
 
 2. **Intelligent File Format Parsing**
@@ -228,7 +228,7 @@ print_api_status()
 
 ### For API Configuration
 
-**Current Config File:** `/Users/bcdelo/Documents/GitHub/KhipuLabs-khipu/configs/apikeys`
+**Current Config File:** `/Users/bcdelo/Documents/GitHub/KR-Labs-khipu/configs/apikeys`
 
 **Format:**
 ```bash

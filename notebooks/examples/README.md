@@ -232,7 +232,7 @@ If you use these notebooks in your research or work, please cite:
 
 - **Issues:** Report bugs or request features via [GitHub Issues](https://github.com/KR-Labs/KRAnalytics/issues)
 - **Discussions:** Join community discussions in [GitHub Discussions](https://github.com/KR-Labs/KRAnalytics/discussions)
-- **Email:** support@krlabs.dev
+- **Email:** info@krlabs.dev
 
 ---
 

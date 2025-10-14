@@ -460,7 +460,7 @@
 #### **Environment Variable Management**
 **CRITICAL RULE**: **NEVER** hardcode API keys in notebooks. Always use environment-based credential management.
 
-**API Configuration File:** `/KhipuLabs-khipu/configs/apikeys`
+**API Configuration File:** `/KR-Labs-khipu/configs/apikeys`
 
 **Standard API Loading Pattern:**
 ```python
@@ -487,7 +487,7 @@ def load_api_key(api_name: str, required: bool = True) -> str:
 
     if not key:
         # Priority 2: Config file
-        config_path = Path(__file__).parent.parent.parent / 'KhipuLabs-khipu' / 'configs' / 'apikeys'
+        config_path = Path(__file__).parent.parent.parent / 'KR-Labs-khipu' / 'configs' / 'apikeys'
         if config_path.exists():
             with open(config_path, 'r') as f:
                 for line in f:
@@ -736,14 +736,14 @@ def load_api_key(api_name: str, required: bool = True) -> str:
     Load API key from environment or config file.
 
     SECURITY NOTE: API keys should NEVER be hardcoded in notebooks.
-    Store in /KhipuLabs-khipu/configs/apikeys or environment variables.
+    Store in /KR-Labs-khipu/configs/apikeys or environment variables.
     """
     # Priority 1: Environment variable
     key = os.environ.get(api_name)
 
     if not key:
         # Priority 2: Config file
-        config_path = Path.cwd().parent.parent.parent / 'KhipuLabs-khipu' / 'configs' / 'apikeys'
+        config_path = Path.cwd().parent.parent.parent / 'KR-Labs-khipu' / 'configs' / 'apikeys'
         if config_path.exists():
             with open(config_path, 'r') as f:
                 for line in f:
@@ -1103,7 +1103,7 @@ else:
     print(f"⚠️  Registry file not found: {registry_path}")
 
 # Cross-platform integration check
-khipu_executor_path = Path.cwd().parent.parent.parent / 'KhipuLabs-khipu' / 'khipu' / 'core' / 'notebook_executor.py'
+khipu_executor_path = Path.cwd().parent.parent.parent / 'KR-Labs-khipu' / 'khipu' / 'core' / 'notebook_executor.py'
 
 if khipu_executor_path.exists():
     print("✅ Khipu notebook executor available for production deployment")

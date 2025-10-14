@@ -176,7 +176,7 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 - Report bugs: [GitHub Issues](https://github.com/KR-Labs/KRAnalytics/issues)
 - Discussions: [GitHub Discussions](https://github.com/KR-Labs/KRAnalytics/discussions)
-- Email: support@krlabs.dev
+- Email: info@krlabs.dev
 
 ## 📄 License
 

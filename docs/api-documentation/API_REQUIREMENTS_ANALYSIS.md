@@ -390,7 +390,7 @@
 
 ### **Environment File Structure**
 
-**Location:** `/KhipuLabs-khipu/configs/apikeys`
+**Location:** `/KR-Labs-khipu/configs/apikeys`
 
 ```bash
 # ============================================================================
@@ -627,7 +627,7 @@ for api, status_text in status.items():
    - Add validation and error handling
    - Test with all 10 APIs (4 existing + 6 new)
 5. ⏳ **Update Environment Configuration:**
-   - Add 6 new API keys to `/KhipuLabs-khipu/configs/apikeys`
+   - Add 6 new API keys to `/KR-Labs-khipu/configs/apikeys`
    - Update `.gitignore` to exclude `apikeys`
    - Document API endpoints in configuration comments
 
