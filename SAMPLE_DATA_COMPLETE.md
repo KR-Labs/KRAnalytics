@@ -25,13 +25,15 @@ Successfully implemented sample data infrastructure that enables KRAnalytics not
 
 | Dataset | Records | Source | Status |
 |---------|---------|--------|--------|
+| `census_income_2022.csv` | 52 states | Census ACS 5-Year | ✅ Generated from API |
 | `census_inequality_2022.csv` | 52 states | Census ACS 5-Year | ✅ Generated from API |
+| `bls_employment_national.csv` | 216 monthly | BLS Labor Force Statistics | ✅ Generated from API |
 | `bls_employment_counties_sample.csv` | 10 counties | BLS QCEW | ✅ Sample data |
 | `epa_environmental_burden_sample.csv` | 10 states | EPA EJScreen | ✅ Sample data |
 | `fbi_crime_stats_sample.csv` | 25 records | FBI UCR | ✅ Sample data |
 
-**Total Records:** 97 rows of data  
-**Total Files:** 7 files (4 CSV + 3 metadata)
+**Total Records:** 365 rows of data (3 API datasets + 3 sample datasets)  
+**Total Files:** 9 files (6 CSV + 3 metadata)
 
 ### 3. Metadata Files
 
@@ -41,20 +43,30 @@ Successfully implemented sample data infrastructure that enables KRAnalytics not
 
 ### 4. API Integration Issues Resolved
 
-**Census Income API:**
-- Issue: 400 Client Error on ACS income variables
-- Resolution: Census inequality data successfully downloaded instead
-- Contains: Gini index, income distribution, aggregate income
+**Census Income API (✅ FIXED):**
+- ~~Issue: 400 Client Error on ACS income variables~~ **RESOLVED**
+- Root Cause: S-series (subject table) variables not available in `/acs/acs5` endpoint
+- Solution: Changed to B-series (detailed table) variables
+  - Old: `S1901_C01_012E` (mean income), `S1701_C01_042E` (poverty rate)
+  - New: `B17001_002E` (poverty count), `B19001_001E` (total households)
+- Now generates: `census_income_2022.csv` with 52 states of real API data
+- Contains: Median income, per capita income, calculated poverty rate
 
-**BLS Employment API:**
-- Issue: API response format inconsistency
-- Resolution: Created representative sample data for tutorials
-- Contains: County employment, wages, establishments
+**BLS Employment API (✅ FIXED):**
+- ~~Issue: API response format inconsistency~~ **RESOLVED**
+- Root Cause: Footnotes array contains dict objects, not strings
+- Solution: 
+  - Added API status check (`REQUEST_SUCCEEDED`)
+  - Safely parse footnotes with dict checking
+  - Handle missing 'text' field gracefully
+- Now generates: `bls_employment_national.csv` with 216 monthly records of real API data
+- Contains: Unemployment rate, labor force participation, employment levels (2018-2023)
 
 **EPA & FBI APIs:**
-- Status: No API keys configured
-- Resolution: Generated sample data for tutorial purposes
+- Status: No API keys configured (optional)
+- Resolution: Generated representative sample data for tutorials
 - Sufficient for demonstrating analytics workflows
+- Users can optionally provide keys to get real data
 
 ## Technical Implementation
 
@@ -129,17 +141,40 @@ src/kranalytics/
 ## Quality Assurance
 
 ### Data Verification
-- ✅ Census inequality: 52 records (all US states + DC + PR)
+- ✅ Census income: 52 records (all US states + DC + PR), real API data
+- ✅ Census inequality: 52 records (all US states + DC + PR), real API data  
+- ✅ BLS national employment: 216 records (monthly data 2018-2023), real API data
+- ✅ BLS county employment: 10 counties, representative sample
+- ✅ EPA environmental: 10 states, representative sample
+- ✅ FBI crime: 25 records, representative sample
 - ✅ Proper CSV formatting with headers
 - ✅ Metadata files generated correctly
 - ✅ Version tracking in place
 
 ### Sample Data Quality
+
+**Census Income Data:**
+```csv
+state_name,median_household_income,per_capita_income,poverty_count,total_households,poverty_rate,...
+Alabama,59609,33344,768897,1933150,39.77,...
+Alaska,86370,42828,75227,264376,28.45,...
+Arizona,72581,38334,916876,2739136,33.47,...
+```
+
+**Census Inequality Data:**
 ```csv
 state_name,gini_index,income_under_10k,income_200k_plus,...
 Alabama,0.4797,124968,125377,...
 Alaska,0.4304,10232,32596,...
 Arizona,0.461,134472,252891,...
+```
+
+**BLS Employment National:**
+```csv
+series_id,year,period,period_name,value,series_name,...
+LNS14000000,2023,M12,December,3.8,Unemployment Rate,...
+LNS12300000,2023,M12,December,62.5,Labor Force Participation Rate,...
+CES0000000001,2023,M12,December,157538,Total Nonfarm Employment,...
 ```
 
 ## Benefits
@@ -233,13 +268,15 @@ e96c687 Initial public repository setup
 
 ## Statistics
 
-- **Sample Data Size:** ~15 KB (4 CSV files)
+- **Sample Data Size:** ~31 KB (6 CSV files)
 - **Metadata Size:** ~5 KB (3 files)
-- **Script Size:** 21 KB (520 lines)
-- **Total Records:** 97 data rows
-- **API Calls:** 2 successful (Census inequality), 2 sample fallbacks
-- **Generation Time:** < 10 seconds
+- **Script Size:** 21 KB (634 lines after fixes)
+- **Total Records:** 365 data rows (216 BLS + 52 Census income + 52 Census inequality + 45 sample)
+- **API Calls:** 3 successful (Census income, Census inequality, BLS national employment)
+- **Sample Datasets:** 3 (BLS counties, EPA, FBI)
+- **Generation Time:** < 30 seconds
 - **Dependencies:** 3 packages (pandas, requests, numpy)
+- **API Errors Fixed:** 2 (Census 400 error, BLS JSON parsing)
 
 ## Conclusion
 
