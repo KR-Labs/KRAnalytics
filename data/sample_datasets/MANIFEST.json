@@ -1,7 +1,27 @@
 {
-  "generation_date": "2025-10-14T15:54:10.651300",
+  "generation_date": "2025-10-14T16:02:41.923117",
   "generator_version": "1.0.0",
   "files": [
+    {
+      "filename": "census_income_2022.csv",
+      "description": "Census ACS income and poverty data by state (2022)",
+      "records": 52,
+      "source": "US Census Bureau ACS 5-Year Estimates",
+      "api": "https://api.census.gov/data/2022/acs/acs5",
+      "columns": [
+        "state_name",
+        "median_household_income",
+        "per_capita_income",
+        "poverty_count",
+        "total_households",
+        "state_fips",
+        "poverty_rate",
+        "year",
+        "source",
+        "generated_date"
+      ],
+      "date_generated": "2025-10-14T16:02:40.983633"
+    },
     {
       "filename": "census_inequality_2022.csv",
       "description": "Census ACS inequality metrics by state (2022)",
@@ -19,7 +39,31 @@
         "source",
         "generated_date"
       ],
-      "date_generated": "2025-10-14T15:54:10.203797"
+      "date_generated": "2025-10-14T16:02:41.521189"
+    },
+    {
+      "filename": "bls_employment_national.csv",
+      "description": "BLS national employment indicators (2018-2023)",
+      "records": 216,
+      "source": "Bureau of Labor Statistics",
+      "api": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+      "series_ids": [
+        "LNS14000000",
+        "LNS12300000",
+        "CES0000000001"
+      ],
+      "columns": [
+        "series_id",
+        "year",
+        "period",
+        "period_name",
+        "value",
+        "footnotes",
+        "series_name",
+        "source",
+        "generated_date"
+      ],
+      "date_generated": "2025-10-14T16:02:41.914604"
     },
     {
       "filename": "bls_employment_counties_sample.csv",
@@ -37,7 +81,7 @@
         "source",
         "generated_date"
       ],
-      "date_generated": "2025-10-14T15:54:10.644879"
+      "date_generated": "2025-10-14T16:02:41.917398"
     },
     {
       "filename": "epa_environmental_burden_sample.csv",
@@ -61,7 +105,7 @@
         "source",
         "generated_date"
       ],
-      "date_generated": "2025-10-14T15:54:10.647946"
+      "date_generated": "2025-10-14T16:02:41.919824"
     },
     {
       "filename": "fbi_crime_stats_sample.csv",
@@ -87,13 +131,10 @@
         "source",
         "generated_date"
       ],
-      "date_generated": "2025-10-14T15:54:10.650431"
+      "date_generated": "2025-10-14T16:02:41.922789"
     }
   ],
-  "errors": [
-    "Error generating Census income data: 400 Client Error:  for url: https://api.census.gov/data/2022/acs/acs5?get=NAME%2CB19013_001E%2CB19301_001E%2CS1901_C01_012E%2CS1701_C01_042E&for=state%3A%2A&key=199343249e46333a2676a4976d696e45a9d2e15d",
-    "Error generating BLS employment data: 'text'"
-  ],
-  "total_files": 4,
-  "total_records": 97
+  "errors": [],
+  "total_files": 6,
+  "total_records": 365
 }

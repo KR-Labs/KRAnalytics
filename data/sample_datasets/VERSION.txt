@@ -1,5 +1,5 @@
 KRAnalytics Sample Data Version Information
-Generated: 2025-10-14 15:54:10
+Generated: 2025-10-14 16:02:41
 Generator: scripts/generate_sample_data.py
 
 Data Sources:
@@ -8,8 +8,8 @@ Data Sources:
 - Environmental Protection Agency (EJScreen)
 - Federal Bureau of Investigation (Uniform Crime Reports)
 
-Files Generated: 4
-Total Records: 97
+Files Generated: 6
+Total Records: 365
 
 Usage:
 These datasets are intended for tutorial and educational purposes.

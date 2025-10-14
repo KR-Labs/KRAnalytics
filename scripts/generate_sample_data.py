@@ -64,10 +64,12 @@ class SampleDataGenerator:
         
         try:
             # Get median household income by state for 2020-2022
+            # Note: Using only B-series (detailed tables) as S-series (subject tables) 
+            # are not available in acs5 endpoint
             base_url = "https://api.census.gov/data/2022/acs/acs5"
             
             params = {
-                'get': 'NAME,B19013_001E,B19301_001E,S1901_C01_012E,S1701_C01_042E',
+                'get': 'NAME,B19013_001E,B19301_001E,B17001_002E,B19001_001E',
                 'for': 'state:*',
                 'key': api_key
             }
@@ -83,13 +85,16 @@ class SampleDataGenerator:
             
             # Rename columns for clarity
             df.columns = ['state_name', 'median_household_income', 'per_capita_income', 
-                         'mean_household_income', 'poverty_rate', 'state_fips']
+                         'poverty_count', 'total_households', 'state_fips']
             
             # Convert numeric columns
             numeric_cols = ['median_household_income', 'per_capita_income', 
-                           'mean_household_income', 'poverty_rate']
+                           'poverty_count', 'total_households']
             for col in numeric_cols:
                 df[col] = pd.to_numeric(df[col], errors='coerce')
+            
+            # Calculate poverty rate
+            df['poverty_rate'] = (df['poverty_count'] / df['total_households'] * 100).round(2)
             
             # Add metadata
             df['year'] = 2022
@@ -221,18 +226,28 @@ class SampleDataGenerator:
             
             result = response.json()
             
+            # Check for API errors
+            if result.get('status') != 'REQUEST_SUCCEEDED':
+                error_msg = result.get('message', ['Unknown API error'])
+                raise Exception(f"BLS API error: {error_msg}")
+            
             # Parse results
             records = []
             for series in result['Results']['series']:
                 series_id = series['seriesID']
                 for item in series['data']:
+                    # Safely get footnotes
+                    footnotes = []
+                    if 'footnotes' in item and item['footnotes']:
+                        footnotes = [f.get('text', '') for f in item['footnotes'] if isinstance(f, dict)]
+                    
                     records.append({
                         'series_id': series_id,
                         'year': int(item['year']),
                         'period': item['period'],
                         'period_name': item['periodName'],
                         'value': float(item['value']),
-                        'footnotes': '; '.join([f['text'] for f in item.get('footnotes', [])])
+                        'footnotes': '; '.join(footnotes) if footnotes else ''
                     })
             
             df = pd.DataFrame(records)
