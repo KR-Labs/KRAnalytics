@@ -1,11 +1,10 @@
 # KRAnalytics
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/KR-Labs/KRAnalytics/ci.yml?branch=main)  
-![Docs](https://img.shields.io/badge/Docs-Latest-blue)  
-![Code Quality](https://img.shields.io/codefactor/grade/github/KR-Labs/KRAnalytics)  
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)  
-[![Python](https://img.shields.io/badge/Python-3.9%2B-blue)](https://www.python.org/)  
-[![Package](https://img.shields.io/badge/Package-v1.0.0-blue)](#installation)  
+[![Tests](https://img.shields.io/github/actions/workflow/status/KR-Labs/KRAnalytics/test.yml?branch=main&label=tests)](https://github.com/KR-Labs/KRAnalytics/actions/workflows/test.yml)
+[![Lint](https://img.shields.io/github/actions/workflow/status/KR-Labs/KRAnalytics/lint.yml?branch=main&label=lint)](https://github.com/KR-Labs/KRAnalytics/actions/workflows/lint.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/)
+[![Notebooks](https://img.shields.io/badge/notebooks-5-orange.svg)](./notebooks/examples/)  
 
 ---
 
