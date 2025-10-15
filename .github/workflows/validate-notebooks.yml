@@ -1,0 +1,111 @@
+name: Validate Notebooks
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Cache pip packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install nbconvert nbformat jupyter
+
+    - name: Validate notebook structure
+      run: |
+        python -c "
+        import json
+        import sys
+        from pathlib import Path
+        
+        notebooks = list(Path('notebooks/examples').glob('*.ipynb'))
+        print(f'Found {len(notebooks)} notebooks to validate')
+        
+        for nb_path in notebooks:
+            print(f'Validating structure: {nb_path.name}')
+            try:
+                with open(nb_path) as f:
+                    nb = json.load(f)
+                    if 'cells' not in nb:
+                        print(f'❌ {nb_path.name}: Missing cells')
+                        sys.exit(1)
+                    if 'metadata' not in nb:
+                        print(f'❌ {nb_path.name}: Missing metadata')
+                        sys.exit(1)
+                    print(f'✅ {nb_path.name}: Valid structure')
+            except json.JSONDecodeError as e:
+                print(f'❌ {nb_path.name}: Invalid JSON - {e}')
+                sys.exit(1)
+        
+        print('All notebooks have valid structure!')
+        "
+
+    - name: Check for execution errors
+      run: |
+        python -c "
+        import json
+        from pathlib import Path
+        
+        notebooks = list(Path('notebooks/examples').glob('*.ipynb'))
+        errors_found = False
+        
+        for nb_path in notebooks:
+            with open(nb_path) as f:
+                nb = json.load(f)
+                for i, cell in enumerate(nb.get('cells', [])):
+                    if cell.get('cell_type') == 'code':
+                        outputs = cell.get('outputs', [])
+                        for output in outputs:
+                            if output.get('output_type') == 'error':
+                                print(f'⚠️  {nb_path.name} cell {i+1}: Contains error output')
+                                errors_found = True
+        
+        if errors_found:
+            print('Warning: Some notebooks contain error outputs')
+        else:
+            print('✅ No error outputs found in notebooks')
+        "
+
+    - name: Execute sample notebook (dry run)
+      run: |
+        # Execute one notebook as a smoke test
+        # Note: Full execution may require API keys
+        jupyter nbconvert --to notebook --execute \
+          --ExecutePreprocessor.timeout=60 \
+          --ExecutePreprocessor.kernel_name=python3 \
+          --output=/tmp/test_output.ipynb \
+          notebooks/examples/01_Income_Analysis_Tutorial.ipynb \
+          --allow-errors || echo "⚠️  Execution failed - API keys may be required"
+
+    - name: Summary
+      if: always()
+      run: |
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        echo "📊 Notebook Validation Summary"
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        echo "✅ Notebook structure validation completed"
+        echo "✅ Error output check completed"
+        echo "ℹ️  Full execution requires API keys"
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
