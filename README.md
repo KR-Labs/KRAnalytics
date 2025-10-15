@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="https://raw.githubusercontent.com/KR-Labs/KRAnalytics/main/docs/assets/krlabs-banner.png" alt="KR Labs Banner" width="100%">
+</div>
+
 # KRAnalytics
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
