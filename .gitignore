@@ -49,6 +49,10 @@ data/processed/**
 data/interim/**
 !data/**/.gitkeep
 
+# Keep sample datasets for public repo
+!data/sample_datasets/
+!data/sample_datasets/**
+
 models/production/**
 models/staging/**
 models/archived/**
@@ -58,7 +62,7 @@ models/archived/**
 outputs/**
 !outputs/**/.gitkeep
 
-# Scripts (Internal tooling)
+# Scripts (Internal tooling - exclude these specific ones)
 scripts/deployment/
 scripts/ingestion/
 scripts/maintenance/
@@ -70,6 +74,11 @@ scripts/*dashboard*.py
 scripts/*database*.py
 scripts/setup_*.py
 scripts/install_*.py
+
+# Keep these utility scripts in public repo
+!scripts/generate_sample_data.py
+!scripts/standardize_notebooks.py
+!scripts/validate_kranalytics_notebooks.py
 
 # Backups & Archives
 backups/
@@ -83,6 +92,43 @@ tools/
 # Reorganization artifacts
 reorganize_workspace.py
 WORKSPACE_REORGANIZATION_COMPLETE.md
+
+# Internal Status/Progress Reports (NOT for public repo)
+ACHIEVING_100_PERCENT_PASS.md
+API_ERRORS_RESOLVED.md
+CELL_BY_CELL_AUDIT_REPORT.md
+FINAL_VALIDATION_REPORT.md
+KERNEL_SETUP_COMPLETE.md
+NAMING_CONVENTIONS_UPDATED.md
+NOTEBOOK_07_UPDATE_COMPLETE.md
+NOTEBOOK_AUDIT_COMPLETE.md
+NOTEBOOK_QUICK_REFERENCE.md
+NOTEBOOK_STANDARDIZATION_PLAN.md
+NOTEBOOK_UPDATE_GUIDE.md
+NOTEBOOK_VALIDATION_REPORT.md
+PARTIAL_COMPLIANCE_FIXES_COMPLETE.md
+PUBLIC_REPO_MIGRATION_COMPLETE.md
+READY_FOR_GITHUB.md
+REFACTORING_COMPLETE.md
+SAMPLE_DATA_COMPLETE.md
+SESSION_SUMMARY.md
+STANDARDIZATION_COMPLETE.md
+STANDARDIZATION_REPORT.md
+UPLOAD_READINESS_REPORT.md
+CLEANUP_FOR_GITHUB.md
+GITHUB_UPLOAD_SUMMARY.md
+cleanup_for_github.sh
+
+# GitHub-specific files (keep in public repo)
+!.github/
+!CODE_OF_CONDUCT.md
+!CONTRIBUTING.md
+!SECURITY.md
+!LICENSE
+!README.md
+
+# Configuration files
+!.pre-commit-config.yaml
 
 # ==============================================================================
 # STANDARD IGNORES
