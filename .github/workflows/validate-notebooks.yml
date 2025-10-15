@@ -49,14 +49,14 @@ jobs:
                 with open(nb_path) as f:
                     nb = json.load(f)
                     if 'cells' not in nb:
-                        print(f'❌ {nb_path.name}: Missing cells')
+                        print(f'ERROR: {nb_path.name}: Missing cells')
                         sys.exit(1)
                     if 'metadata' not in nb:
-                        print(f'❌ {nb_path.name}: Missing metadata')
+                        print(f'ERROR: {nb_path.name}: Missing metadata')
                         sys.exit(1)
-                    print(f'✅ {nb_path.name}: Valid structure')
+                    print(f'PASS: {nb_path.name}: Valid structure')
             except json.JSONDecodeError as e:
-                print(f'❌ {nb_path.name}: Invalid JSON - {e}')
+                print(f'ERROR: {nb_path.name}: Invalid JSON - {e}')
                 sys.exit(1)
         
         print('All notebooks have valid structure!')
@@ -79,13 +79,13 @@ jobs:
                         outputs = cell.get('outputs', [])
                         for output in outputs:
                             if output.get('output_type') == 'error':
-                                print(f'⚠️  {nb_path.name} cell {i+1}: Contains error output')
+                                print(f'WARNING: {nb_path.name} cell {i+1}: Contains error output')
                                 errors_found = True
         
         if errors_found:
             print('Warning: Some notebooks contain error outputs')
         else:
-            print('✅ No error outputs found in notebooks')
+            print('PASS: No error outputs found in notebooks')
         "
 
     - name: Execute sample notebook (dry run)
@@ -97,15 +97,15 @@ jobs:
           --ExecutePreprocessor.kernel_name=python3 \
           --output=/tmp/test_output.ipynb \
           notebooks/examples/01_Income_Analysis_Tutorial.ipynb \
-          --allow-errors || echo "⚠️  Execution failed - API keys may be required"
+          --allow-errors || echo "WARNING: Execution failed - API keys may be required"
 
     - name: Summary
       if: always()
       run: |
-        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-        echo "📊 Notebook Validation Summary"
-        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-        echo "✅ Notebook structure validation completed"
-        echo "✅ Error output check completed"
-        echo "ℹ️  Full execution requires API keys"
-        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        echo "========================================"
+        echo "Notebook Validation Summary"
+        echo "========================================"
+        echo "PASS: Notebook structure validation completed"
+        echo "PASS: Error output check completed"
+        echo "INFO: Full execution requires API keys"
+        echo "========================================"
