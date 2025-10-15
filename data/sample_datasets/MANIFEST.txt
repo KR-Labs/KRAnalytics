@@ -1,0 +1,40 @@
+KRAnalytics Sample Data Manifest
+======================================================================
+
+Generated: 2025-10-14 16:02:41
+Total Files: 6
+Total Records: 365
+
+1. census_income_2022.csv
+   Description: Census ACS income and poverty data by state (2022)
+   Records: 52
+   Source: US Census Bureau ACS 5-Year Estimates
+
+2. census_inequality_2022.csv
+   Description: Census ACS inequality metrics by state (2022)
+   Records: 52
+   Source: US Census Bureau ACS 5-Year Estimates
+
+3. bls_employment_national.csv
+   Description: BLS national employment indicators (2018-2023)
+   Records: 216
+   Source: Bureau of Labor Statistics
+
+4. bls_employment_counties_sample.csv
+   Description: BLS QCEW county employment data (sample - top 10 counties)
+   Records: 10
+   Source: Bureau of Labor Statistics QCEW (Sample)
+   Note: Representative sample data for tutorial purposes
+
+5. epa_environmental_burden_sample.csv
+   Description: EPA EJScreen environmental burden indicators by state (sample)
+   Records: 10
+   Source: EPA EJScreen (Sample)
+   Note: Representative sample data for tutorial purposes
+
+6. fbi_crime_stats_sample.csv
+   Description: FBI UCR crime statistics by state (2018-2022, sample)
+   Records: 25
+   Source: FBI Uniform Crime Reports (Sample)
+   Note: Representative sample data for tutorial purposes
+

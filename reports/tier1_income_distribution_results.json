@@ -1,0 +1,113 @@
+{
+  "metadata": {
+    "notebook": "Tier1_Income_Distribution_ACS.ipynb",
+    "version": "v1.0",
+    "date_generated": "2025-10-15T00:45:48.356331",
+    "data_source": "Census ACS 5-Year Estimates (2019-2023)",
+    "geographic_level": "state",
+    "n_records": 52
+  },
+  "summary_statistics": {
+    "median_income": {
+      "mean": 77173.40384615384,
+      "median": 75273.0,
+      "std": 14810.72520137259,
+      "min": 25096.0,
+      "max": 106287.0
+    },
+    "gini_index": {
+      "mean": 0.4682942307692307,
+      "median": 0.46645000000000003,
+      "std": 0.021340612239793652
+    },
+    "poverty_rate": {
+      "mean": 12.806214553897776,
+      "median": 11.929821443797529,
+      "regions_above_15pct": 9
+    }
+  },
+  "top_10_income": [
+    {
+      "NAME": "District of Columbia",
+      "median_household_income": 106287
+    },
+    {
+      "NAME": "Maryland",
+      "median_household_income": 101652
+    },
+    {
+      "NAME": "Massachusetts",
+      "median_household_income": 101341
+    },
+    {
+      "NAME": "New Jersey",
+      "median_household_income": 101050
+    },
+    {
+      "NAME": "Hawaii",
+      "median_household_income": 98317
+    },
+    {
+      "NAME": "California",
+      "median_household_income": 96334
+    },
+    {
+      "NAME": "New Hampshire",
+      "median_household_income": 95628
+    },
+    {
+      "NAME": "Washington",
+      "median_household_income": 94952
+    },
+    {
+      "NAME": "Connecticut",
+      "median_household_income": 93760
+    },
+    {
+      "NAME": "Colorado",
+      "median_household_income": 92470
+    }
+  ],
+  "bottom_10_income": [
+    {
+      "NAME": "Puerto Rico",
+      "median_household_income": 25096
+    },
+    {
+      "NAME": "Mississippi",
+      "median_household_income": 54915
+    },
+    {
+      "NAME": "West Virginia",
+      "median_household_income": 57917
+    },
+    {
+      "NAME": "Arkansas",
+      "median_household_income": 58773
+    },
+    {
+      "NAME": "Louisiana",
+      "median_household_income": 60023
+    },
+    {
+      "NAME": "Alabama",
+      "median_household_income": 62027
+    },
+    {
+      "NAME": "New Mexico",
+      "median_household_income": 62125
+    },
+    {
+      "NAME": "Kentucky",
+      "median_household_income": 62417
+    },
+    {
+      "NAME": "Oklahoma",
+      "median_household_income": 63603
+    },
+    {
+      "NAME": "South Carolina",
+      "median_household_income": 66818
+    }
+  ]
+}

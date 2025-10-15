@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/__init__.py
+src/kranalytics/__init__.py
+src/kranalytics/data_utils.py
+src/kranalytics.egg-info/PKG-INFO
+src/kranalytics.egg-info/SOURCES.txt
+src/kranalytics.egg-info/dependency_links.txt
+src/kranalytics.egg-info/requires.txt
+src/kranalytics.egg-info/top_level.txt
+src/kranalytics/khipu_analytics/__init__.py
+src/kranalytics/khipu_analytics/execution_tracking.py
+tests/test_workspace_cohesion.py

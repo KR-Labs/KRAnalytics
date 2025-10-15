@@ -1,0 +1,140 @@
+{
+  "generation_date": "2025-10-14T16:02:41.923117",
+  "generator_version": "1.0.0",
+  "files": [
+    {
+      "filename": "census_income_2022.csv",
+      "description": "Census ACS income and poverty data by state (2022)",
+      "records": 52,
+      "source": "US Census Bureau ACS 5-Year Estimates",
+      "api": "https://api.census.gov/data/2022/acs/acs5",
+      "columns": [
+        "state_name",
+        "median_household_income",
+        "per_capita_income",
+        "poverty_count",
+        "total_households",
+        "state_fips",
+        "poverty_rate",
+        "year",
+        "source",
+        "generated_date"
+      ],
+      "date_generated": "2025-10-14T16:02:40.983633"
+    },
+    {
+      "filename": "census_inequality_2022.csv",
+      "description": "Census ACS inequality metrics by state (2022)",
+      "records": 52,
+      "source": "US Census Bureau ACS 5-Year Estimates",
+      "api": "https://api.census.gov/data/2022/acs/acs5",
+      "columns": [
+        "state_name",
+        "gini_index",
+        "income_under_10k",
+        "income_200k_plus",
+        "aggregate_income",
+        "state_fips",
+        "year",
+        "source",
+        "generated_date"
+      ],
+      "date_generated": "2025-10-14T16:02:41.521189"
+    },
+    {
+      "filename": "bls_employment_national.csv",
+      "description": "BLS national employment indicators (2018-2023)",
+      "records": 216,
+      "source": "Bureau of Labor Statistics",
+      "api": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+      "series_ids": [
+        "LNS14000000",
+        "LNS12300000",
+        "CES0000000001"
+      ],
+      "columns": [
+        "series_id",
+        "year",
+        "period",
+        "period_name",
+        "value",
+        "footnotes",
+        "series_name",
+        "source",
+        "generated_date"
+      ],
+      "date_generated": "2025-10-14T16:02:41.914604"
+    },
+    {
+      "filename": "bls_employment_counties_sample.csv",
+      "description": "BLS QCEW county employment data (sample - top 10 counties)",
+      "records": 10,
+      "source": "Bureau of Labor Statistics QCEW (Sample)",
+      "note": "Representative sample data for tutorial purposes",
+      "columns": [
+        "year",
+        "quarter",
+        "area_fips",
+        "county_name",
+        "total_employment",
+        "average_weekly_wage",
+        "source",
+        "generated_date"
+      ],
+      "date_generated": "2025-10-14T16:02:41.917398"
+    },
+    {
+      "filename": "epa_environmental_burden_sample.csv",
+      "description": "EPA EJScreen environmental burden indicators by state (sample)",
+      "records": 10,
+      "source": "EPA EJScreen (Sample)",
+      "note": "Representative sample data for tutorial purposes",
+      "columns": [
+        "state",
+        "pm25_percentile",
+        "ozone_percentile",
+        "diesel_pm_percentile",
+        "traffic_proximity_percentile",
+        "lead_paint_percentile",
+        "superfund_proximity_percentile",
+        "rmp_proximity_percentile",
+        "hazardous_waste_percentile",
+        "low_income_percentile",
+        "minority_percentile",
+        "year",
+        "source",
+        "generated_date"
+      ],
+      "date_generated": "2025-10-14T16:02:41.919824"
+    },
+    {
+      "filename": "fbi_crime_stats_sample.csv",
+      "description": "FBI UCR crime statistics by state (2018-2022, sample)",
+      "records": 25,
+      "source": "FBI Uniform Crime Reports (Sample)",
+      "note": "Representative sample data for tutorial purposes",
+      "columns": [
+        "state",
+        "year",
+        "population",
+        "violent_crime",
+        "murder",
+        "rape",
+        "robbery",
+        "aggravated_assault",
+        "property_crime",
+        "burglary",
+        "larceny_theft",
+        "motor_vehicle_theft",
+        "violent_crime_rate",
+        "property_crime_rate",
+        "source",
+        "generated_date"
+      ],
+      "date_generated": "2025-10-14T16:02:41.922789"
+    }
+  ],
+  "errors": [],
+  "total_files": 6,
+  "total_records": 365
+}
