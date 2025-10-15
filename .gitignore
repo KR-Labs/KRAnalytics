@@ -1,0 +1,320 @@
+# Python# .gitignore for PUBLIC KRAnalytics Repository
+
+__pycache__/# This excludes enterprise/private Khipu files from public repo
+
+*.py[cod]
+
+*$py.class# ==============================================================================
+
+*.so# PRIVATE/ENTERPRISE CONTENT (NEVER COMMIT TO PUBLIC)
+
+.Python# ==============================================================================
+
+build/
+
+develop-eggs/# Production Notebooks (ALL 29 domains - Enterprise Only)
+
+dist/notebooks/production/
+
+downloads/!notebooks/production/.gitkeep
+
+eggs/
+
+.eggs/# Enterprise-specific notebooks
+
+lib/notebooks/enhanced_notebooks/
+
+lib64/
+
+parts/# API Keys & Credentials
+
+sdist/config/apikeys
+
+var/config/kaggle.json
+
+wheels/config/*_api_key*
+
+*.egg-info/**/*apikey*
+
+.installed.cfg**/*credential*
+
+*.egg**/*secret*
+
+MANIFEST
+
+# Enterprise Configuration
+
+# Virtual Environmentsconfig/*_kpi_mapping.json
+
+.venv/config/mlops_*.json
+
+venv/config/notebook_registry.json
+
+ENV/config/notebook_registry_enhanced.json
+
+env/config/requirements_production.txt
+
+config/environment.yml
+
+# IDEsconfig/quipu-analytics-suite.code-workspace
+
+.vscode/
+
+.idea/# Internal Documentation
+
+*.swpdocs/architecture/
+
+*.swodocs/implementation/
+
+*~docs/phase-reports/
+
+.DS_Storedocs/reports/
+
+docs/summaries/
+
+# Jupyterdocs/*COMPLETION*.md
+
+.ipynb_checkpoints/docs/*STATUS*.md
+
+*.ipynb_checkpointsdocs/*AUDIT*.md
+
+docs/*TEST*.md
+
+# Testingdocs/*FIX*.md
+
+.pytest_cache/docs/*VALIDATION*.md
+
+.coveragedocs/*INTEGRATION*.md
+
+htmlcov/
+
+.tox/# Data & Models (May contain proprietary data)
+
+.hypothesis/data/raw/**
+
+data/processed/**
+
+# Environment variablesdata/interim/**
+
+.env!data/**/.gitkeep
+
+.env.local
+
+apikeys# Keep sample datasets for public repo
+
+config/apikeys!data/sample_datasets/
+
+!data/sample_datasets/**
+
+# Data (large files)
+
+data/raw/models/production/**
+
+data/processed/models/staging/**
+
+*.csv.gzmodels/archived/**
+
+*.parquet!models/**/.gitkeep
+
+*.feather
+
+# Outputs (May contain sensitive analysis)
+
+# Outputsoutputs/**
+
+outputs/!outputs/**/.gitkeep
+
+reports/
+
+exports/# Scripts (Internal tooling - exclude these specific ones)
+
+scripts/deployment/
+
+# Documentation buildsscripts/ingestion/
+
+docs/_build/scripts/maintenance/
+
+site/scripts/*_test*.py
+
+scripts/*_fix*.py
+
+# OSscripts/*ingestion*.py
+
+.DS_Storescripts/*migration*.py
+
+Thumbs.dbscripts/*dashboard*.py
+
+scripts/*database*.py
+scripts/setup_*.py
+scripts/install_*.py
+
+# Keep these utility scripts in public repo
+!scripts/generate_sample_data.py
+!scripts/standardize_notebooks.py
+!scripts/validate_kranalytics_notebooks.py
+
+# Backups & Archives
+backups/
+**/backups/
+*.backup
+*.backup_*
+
+# Enterprise-specific tools
+tools/
+
+# Reorganization artifacts
+reorganize_workspace.py
+WORKSPACE_REORGANIZATION_COMPLETE.md
+
+# Internal Status/Progress Reports (NOT for public repo)
+ACHIEVING_100_PERCENT_PASS.md
+API_ERRORS_RESOLVED.md
+CELL_BY_CELL_AUDIT_REPORT.md
+FINAL_VALIDATION_REPORT.md
+KERNEL_SETUP_COMPLETE.md
+NAMING_CONVENTIONS_UPDATED.md
+NOTEBOOK_07_UPDATE_COMPLETE.md
+NOTEBOOK_AUDIT_COMPLETE.md
+NOTEBOOK_QUICK_REFERENCE.md
+NOTEBOOK_STANDARDIZATION_PLAN.md
+NOTEBOOK_UPDATE_GUIDE.md
+NOTEBOOK_VALIDATION_REPORT.md
+PARTIAL_COMPLIANCE_FIXES_COMPLETE.md
+PUBLIC_REPO_MIGRATION_COMPLETE.md
+READY_FOR_GITHUB.md
+REFACTORING_COMPLETE.md
+SAMPLE_DATA_COMPLETE.md
+SESSION_SUMMARY.md
+STANDARDIZATION_COMPLETE.md
+STANDARDIZATION_REPORT.md
+UPLOAD_READINESS_REPORT.md
+CLEANUP_FOR_GITHUB.md
+GITHUB_UPLOAD_SUMMARY.md
+cleanup_for_github.sh
+
+# GitHub-specific files (keep in public repo)
+!.github/
+!CODE_OF_CONDUCT.md
+!CONTRIBUTING.md
+!SECURITY.md
+!LICENSE
+!README.md
+
+# Configuration files
+!.pre-commit-config.yaml
+
+# ==============================================================================
+# STANDARD IGNORES
+# ==============================================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+*.ipynb.backup*
+
+# IPython
+profile_default/
+ipython_config.py
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Testing
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+htmlcov/
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary files
+*.tmp
+*.temp
+.temp/
+.tmp/
+
+# Large files
+*.parquet
+*.csv.gz
+*.zip
+*.tar.gz
+*.pkl
+*.h5
+*.hdf5
+
+# ==============================================================================
+# PUBLIC REPO SPECIFIC
+# ==============================================================================
+
+# Keep these structure markers
+!notebooks/examples/.gitkeep
+!notebooks/templates/.gitkeep
+!notebooks/exploratory/.gitkeep
+.venv/
